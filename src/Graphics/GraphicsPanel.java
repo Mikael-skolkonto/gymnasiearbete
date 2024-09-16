@@ -24,7 +24,9 @@ public class GraphicsPanel extends JPanel {
         universe_actors.add(new Particle(90,90,90));
 
         infoArea.setLocation(0,0);
-        infoArea.setSize(90,infoArea.getHeight());
+        infoArea.setSize(100,infoArea.getHeight());
+        infoArea.setBackground(SystemColor.BLACK);
+        infoArea.setForeground(SystemColor.WHITE);
         add(infoArea);
     }
 
@@ -37,7 +39,7 @@ public class GraphicsPanel extends JPanel {
         dt = (System.currentTimeMillis()-t)/1000d;
         t = System.currentTimeMillis();
         infoArea.setText("FPS: " + Math.round(1d/dt));
-        g.setColor(SystemColor.white);
+        g.setColor(SystemColor.WHITE);
         infoArea.paint(g);
     }
 }

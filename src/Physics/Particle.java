@@ -21,6 +21,8 @@ public class Particle {
      */
     private final int r;
 
+    private static final Color particleColor = new Color(0xC90707);
+
     /**Constructs particle with coordinates 0,0,0 and mass 50 (arbitrary unit)
      */
     public Particle() {
@@ -46,6 +48,12 @@ public class Particle {
     }
 
     public void paint(Graphics g) {
+        physicsStep(g);
+        g.setColor(particleColor);
+        g.fillOval(pos3D[0]-r,pos3D[1]-r,2*r,2*r);
+    }
+
+    private void physicsStep(Graphics g) {
         if (pos3D[0] >= g.getClip().getBounds().width - r || pos3D[0] <= r) {
             velocity3D[0] = -velocity3D[0];
         }
@@ -55,7 +63,5 @@ public class Particle {
         pos3D[0] += velocity3D[0];
         pos3D[1] += velocity3D[1];
         pos3D[2] += velocity3D[2];
-        g.setColor(new Color(0xC90707));
-        g.fillOval(pos3D[0],pos3D[1],r,r);
     }
 }

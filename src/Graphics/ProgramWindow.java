@@ -5,9 +5,10 @@ import com.sun.net.httpserver.Authenticator;
 import javax.swing.JFrame;
 import java.awt.*;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
 
-public class ProgramWindow extends JFrame implements Runnable, WindowStateListener {
+public class ProgramWindow extends JFrame implements Runnable, WindowListener {
 
     private GraphicsPanel currentFullscreenPanel;
 
@@ -15,7 +16,7 @@ public class ProgramWindow extends JFrame implements Runnable, WindowStateListen
         try {
             while (true) {
                 currentFullscreenPanel.repaint();
-                Thread.sleep(1);
+                Thread.sleep(5);
             }
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -23,6 +24,7 @@ public class ProgramWindow extends JFrame implements Runnable, WindowStateListen
     }
     public ProgramWindow() {
         setSize(900,500);
+        //setResizable(false);
         setLocationRelativeTo(null);
 
         setTitle("Dark Matter Simulator");
@@ -31,8 +33,8 @@ public class ProgramWindow extends JFrame implements Runnable, WindowStateListen
         setBackground(new Color(0x000000));
 
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        addWindowStateListener(this);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        addWindowListener(this);
     }
 
     public void addGraphicsPanel() {
@@ -43,11 +45,39 @@ public class ProgramWindow extends JFrame implements Runnable, WindowStateListen
         getContentPane().add(currentFullscreenPanel, 0);
     }
 
-    public void windowStateChanged(WindowEvent e) {
-        if (e.getID() == WindowEvent.WINDOW_CLOSING) {
-            System.out.println("Window thread closed");
-            System.exit(0);
-        }
-        System.out.println("Event heard but missed the if-block");
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        System.out.println("Window closed");
+        System.exit(0);
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }

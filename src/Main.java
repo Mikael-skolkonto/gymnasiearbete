@@ -6,6 +6,6 @@ public class Main {
         ProgramWindow mainWindow = new ProgramWindow();
         mainWindow.addGraphicsPanel();
         new Thread(mainWindow, "WindowThread").start();
-        System.out.println("Start-thread closed");
+        System.out.println("Main-thread closed");
     }
 }
