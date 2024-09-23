@@ -3,7 +3,7 @@ Min Loggbok
 ---
 ## 2024-09-20 (fre)
 
-* Övade teori, såg på på en youtube-video https://youtu.be/5VED1BML4ck
+* Övade teori, såg på på en youtube-video https://youtu.be/5VED1BML4ck samt gick igenom frågor på https://karlsson.app/page/uppgifter.php?kategori=JAVA
 
 ## 2024-09-16 (mån)
 
