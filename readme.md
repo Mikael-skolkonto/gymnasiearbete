@@ -1,6 +1,11 @@
 Min Loggbok
 ===========
 ---
+
+## 2024-10-07 (mån)
+
+* Löste problem 45 från projecteuler.net och commitade till IntroLessons repository.
+
 ## 2024-09-20 (fre)
 
 * Övade teori, såg på på en youtube-video https://youtu.be/5VED1BML4ck
